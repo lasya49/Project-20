@@ -2,9 +2,10 @@ var car, wall;
 var speed, weight;
 
 function setup() {
-  createCanvas(800,400);
+  createCanvas(1600,400);
   background(0,0,0);  
   car=createSprite(50, 200, 50, 50);
+  car.shapeColor=color(255);
   wall=createSprite(1500,200,60, height/2);
   wall.shapeColor=color(80,80,80);
   speed=random(55,90);
@@ -15,7 +16,7 @@ function setup() {
 function draw() {
   background(0,0,0);
   collision();  
-  wall.shapeColor=color(80,80,80);
+  //wall.shapeColor=color(80,80,80);
   drawSprites();
 }
 function collision(){
@@ -23,7 +24,7 @@ function collision(){
     {
     car.velocityX=0;
     var deformation=0.5 * weight * speed* speed/22509;
-    }
+    
     if (deformation> 180)
     {
       car.shapeColor=color(255,0,0);
@@ -37,4 +38,4 @@ function collision(){
       car.shapeColor=color(0,255,0);
     }
   }
-
+}
